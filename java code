@@ -16,34 +16,6 @@ public class Main {
     }
     
 
-//========== User's Code Starts Here ==========
 
-    public static int[] maxFromBothDiagonals(int[][] matrix) {
-        int n = matrix.length;
-        int maxPrimaryDiagonal = Integer.MIN_VALUE;
-        int maxSecondaryDiagonal = Integer.MIN_VALUE;
 
-        for(int i =0; i<matrix.length; i++)
-        {
-            if(matrix[i][i] > maxPrimaryDiagonal)
-            {
-                maxPrimaryDiagonal = matrix[i][i];
-
-            }
-
-            if(matrix[i][n-i-1] > maxSecondaryDiagonal)
-            {
-                maxSecondaryDiagonal = matrix[i][n-i-1];
-            }
-        }
-
-        return new int[] {maxPrimaryDiagonal,maxSecondaryDiagonal};
-        
-        
-     
-    }
     
-
-
-
-}
