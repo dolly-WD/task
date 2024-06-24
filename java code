@@ -1,0 +1,49 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[][] matrix = new int[n][n];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                matrix[i][j] = sc.nextInt();
+            }
+        }
+        int[] result = maxFromBothDiagonals(matrix);
+        System.out.println(result[0] + " " + result[1]);
+        sc.close();
+    }
+    
+
+//========== User's Code Starts Here ==========
+
+    public static int[] maxFromBothDiagonals(int[][] matrix) {
+        int n = matrix.length;
+        int maxPrimaryDiagonal = Integer.MIN_VALUE;
+        int maxSecondaryDiagonal = Integer.MIN_VALUE;
+
+        for(int i =0; i<matrix.length; i++)
+        {
+            if(matrix[i][i] > maxPrimaryDiagonal)
+            {
+                maxPrimaryDiagonal = matrix[i][i];
+
+            }
+
+            if(matrix[i][n-i-1] > maxSecondaryDiagonal)
+            {
+                maxSecondaryDiagonal = matrix[i][n-i-1];
+            }
+        }
+
+        return new int[] {maxPrimaryDiagonal,maxSecondaryDiagonal};
+        
+        
+     
+    }
+    
+
+
+
+}
